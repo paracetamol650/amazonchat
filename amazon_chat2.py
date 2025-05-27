@@ -14,6 +14,8 @@ from selenium.common.exceptions import TimeoutException
 from webdriver_manager.chrome import ChromeDriverManager
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline
 from transformers import PegasusForConditionalGeneration
+from selenium.webdriver.chrome.service import Service
+
 
 warnings.filterwarnings("ignore")
 
@@ -34,8 +36,8 @@ def scrape_reviews_from_urls(product_urls, max_pages=2):
     options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--window-size=1920,1080")
-
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
     results = []
 
     try:
