@@ -1,7 +1,7 @@
 import os
 import re
 import time
-import torch
+#import torch
 import streamlit as st
 import warnings
 import google.generativeai as genai
