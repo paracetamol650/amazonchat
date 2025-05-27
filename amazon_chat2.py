@@ -32,7 +32,6 @@ def extract_asin(url):
 # Scrape reviews using Selenium + webdriver_manager
 def scrape_reviews_from_urls(product_urls, max_pages=2):
     options = Options()
-    options.add_argument("--headless=new")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--window-size=1920,1080")
     driver_version = "120.0.6099.224"  
