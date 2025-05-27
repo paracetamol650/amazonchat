@@ -1,6 +1,3 @@
-aiohappyeyeballs
-aiohttp
-aiosignal
 altair
 annotated-types
 anyio
