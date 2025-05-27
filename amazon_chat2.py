@@ -16,7 +16,6 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipe
 from transformers import PegasusForConditionalGeneration
 from selenium.webdriver.chrome.service import Service
 
-
 warnings.filterwarnings("ignore")
 
 # Gemini setup (safe: API key not hardcoded)
@@ -37,7 +36,7 @@ def scrape_reviews_from_urls(product_urls, max_pages=2):
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--window-size=1920,1080")
     driver_version = "120.0.6099.224"  
-    driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver = webdriver.Chrome(service=service, options=options)
     results = []
 
