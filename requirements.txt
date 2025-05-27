@@ -3,3 +3,6 @@ selenium
 transformers
 torch
 google-generativeai
+requests
+lxml
+countryflag
