@@ -34,6 +34,10 @@ def scrape_reviews_from_urls(product_urls, max_pages=2):
     options = Options()
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--window-size=1920,1080")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--disable-setuid-sandbox")
     driver_version = "120.0.6099.224"  
     service = Service(ChromeDriverManager(driver_version = driver_version).install())
     driver = webdriver.Chrome(service=service, options=options)
